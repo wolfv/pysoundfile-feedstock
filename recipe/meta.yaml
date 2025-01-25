@@ -1,6 +1,6 @@
 {% set name = "pysoundfile" %}
 {% set pypi_name = "soundfile" %}
-{% set version = "0.12.1" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ pypi_name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
-  sha256: e8e1017b2cf1dda767aef19d2fd9ee5ebe07e050d430f77a0a7c66ba08b8cdae
+  sha256: b2c68dab1e30297317080a5b43df57e302584c49e2942defdde0acccc53f0e5b
   patches:
     # Don't use the wheel-related cmdclass patching, we need to pretend the platform
     # is windows to add an appropriate CFFI function. However, doing so makes the
@@ -17,7 +17,7 @@ source:
     - cmdclass.patch
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script:
     # We are currently building a noarch package, but pysoundfile contains a
