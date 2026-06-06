@@ -1,6 +1,6 @@
 {% set name = "pysoundfile" %}
 {% set pypi_name = "soundfile" %}
-{% set version = "0.13.1" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ pypi_name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
-  sha256: b2c68dab1e30297317080a5b43df57e302584c49e2942defdde0acccc53f0e5b
+  sha256: ba1c1a2d618bca5c406647c83b89f07cc8810fa506a50622a6993ba130c1de11
   patches:
     # Don't use the wheel-related cmdclass patching, we need to pretend the platform
     # is windows to add an appropriate CFFI function. However, doing so makes the
