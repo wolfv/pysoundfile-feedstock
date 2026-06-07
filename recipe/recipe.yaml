@@ -72,7 +72,10 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python ${{ python_min }}.*
       run:
+        - python >=${{ python_min }}
         - ${{ pin_subpackage('soundfile', exact=True) }}
     tests:
       - python:
